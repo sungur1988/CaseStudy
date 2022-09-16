@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Core.Entities;
 
-namespace Core.Repositories
+namespace Core.Entities
 {
-    public interface IOrderRepository : IRepository<Order>
+    public class Order : BaseEntity
     {
+        public ICollection<OrderDetails> OrderDetails { get; set; }
     }
 }
