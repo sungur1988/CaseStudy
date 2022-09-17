@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Core.Repositories
 {
-    public interface IRepository<TEntity> where TEntity : class, BaseEntity, new()
+    public interface IRepository<TEntity> where TEntity :  BaseEntity,new()
     {
 
         Task<TEntity> GetById(int id);
