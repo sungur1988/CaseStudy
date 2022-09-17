@@ -19,5 +19,15 @@ namespace DataAccessLayer
         public DbSet<Product> Products { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Order> Orders { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Product>().HasData(
+                    new Product[]
+                    {
+                        new Product {Id = 1,Name="Kalem",Color="Siyah",Size="12'li",Stock=100,Price=10m},
+                        new Product {Id = 2,Name="Silgi",Color="Beyaz",Size="Büyük",Stock=200,Price=1m}
+                    }
+                );
+        }
     }
 }

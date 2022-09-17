@@ -1,7 +1,7 @@
 using BusinessLayer;
 using DataAccessLayer;
-using DataAccessLayer.SeedDatas;
 using IdentityService;
+using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,5 +31,4 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-ProductSeedData.EnsurePopulated(app);
 app.Run();
