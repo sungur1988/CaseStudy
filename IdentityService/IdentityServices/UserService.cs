@@ -35,7 +35,7 @@ namespace IdentityService.IdentityServices
             var result = await _userManager.CreateAsync(appUser, registerRequestDto.Password);
             if (result.Succeeded)
             {
-                await _userManager.AddToRoleAsync(appUser, "User");
+                await _userManager.AddToRoleAsync(appUser, "Customer");
                 return new ServiceResponse<AppUser>(appUser, true, 204);
             }
 
