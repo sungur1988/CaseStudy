@@ -16,5 +16,14 @@ namespace IdentityService
         {
 
         }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            IdentityRole<int>[] roles = new IdentityRole<int>[]
+            {
+                new IdentityRole<int>("Customer"),
+                new IdentityRole<int>("Admin"),
+                new IdentityRole<int>("SysAdmin")
+            };
+        }
     }
 }

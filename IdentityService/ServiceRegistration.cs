@@ -28,7 +28,7 @@ namespace IdentityService
                 options.UseSqlServer(configuration.GetConnectionString("IdentityConnectionString"));
             });
 
-            services.AddIdentity<AppUser, IdentityRole>(options =>
+            services.AddIdentity<AppUser, IdentityRole<int>>(options =>
             {
                 options.User.RequireUniqueEmail = true;
             })
